@@ -1,0 +1,31 @@
+name : Deploy to Elastic Beanstack
+
+
+on:
+  push:
+    - FileCloudAWSEC
+
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: action/checkout@v4
+      - name: Setup Java
+        uses: action/setup-java
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+      - name: Build the Spring Boot app
+        run: mvn clean package -DskipTests
+      - name: Deploy to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: 'FileCloud'
+          environment_name: 'FileCloud-env-1'
+          version_label: ${{ github.sha }}
+          region: us-east-2
+          deployment_package: target/*.jar
