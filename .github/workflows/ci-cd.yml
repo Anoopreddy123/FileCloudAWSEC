@@ -3,7 +3,8 @@ name : Deploy to Elastic Beanstack
 
 on:
   push:
-    - FileCloudAWSEC
+    branches:
+      - FileCloudAWSEC
 
 
 jobs:
