@@ -29,4 +29,4 @@ jobs:
           environment_name: 'FileCloud-env-1'
           version_label: ${{ github.sha }}
           region: us-east-2
-          deployment_package: target/*.jar
+          deployment_package: target/FileCloudApp.jar

@@ -96,6 +96,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>FileCloudApp</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
