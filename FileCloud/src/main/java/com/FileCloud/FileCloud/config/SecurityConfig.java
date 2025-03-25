@@ -24,7 +24,7 @@ import java.util.Arrays;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-@Autowired
+    @Autowired
 
     private final UserDetailsService userDetailsService;
 
@@ -85,7 +85,8 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Adjust as per your frontend URL
+        configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173",
+                "http://192.168.4.166:5173" , "https://filecloud-xi.vercel.app")); // Adjust as per your frontend URL
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("authorization", "content-type", "x-auth-token"));
         configuration.setExposedHeaders(Arrays.asList("x-auth-token"));
