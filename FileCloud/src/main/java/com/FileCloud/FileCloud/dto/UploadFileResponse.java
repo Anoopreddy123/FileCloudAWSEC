@@ -1,6 +1,6 @@
-package com.FileCloud.FileCloud.entity;
+package com.FileCloud.FileCloud.dto;
 
-import jakarta.persistence.Entity;
+
 import lombok.Builder;
 import lombok.Data;
 
