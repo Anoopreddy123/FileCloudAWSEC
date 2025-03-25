@@ -1,6 +1,7 @@
 package com.FileCloud.FileCloud.Controller;
 
-import com.FileCloud.FileCloud.entity.UploadFileResponse;
+import com.FileCloud.FileCloud.dto.UploadFileResponse;
+
 import com.FileCloud.FileCloud.service.UploadFileService;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
