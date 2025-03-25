@@ -28,6 +28,10 @@ public class UserController {
         this.userService = userService;
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the FileCloud!";
+    }
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody users user) throws Exception {
         try {
