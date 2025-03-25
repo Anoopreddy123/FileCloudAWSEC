@@ -1,6 +1,5 @@
 package com.FileCloud.FileCloud.Controller;
-
-
+import com.FileCloud.FileCloud.dto.UploadFileResponse;
 import com.FileCloud.FileCloud.service.UploadFileService;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +25,7 @@ public class UploadFileController {
 
     @Autowired
     private final UploadFileService uploadFileService;
-
+    UploadFileResponse uploadFileResponse = new UploadFileResponse();
 
     @PostMapping("/files/uploadfile")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("userId") Long userId) {
