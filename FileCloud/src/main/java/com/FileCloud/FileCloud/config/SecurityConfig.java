@@ -72,7 +72,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/files/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/files/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/").permitAll()
-                        .anyRequest().authenticated()) // Protected APIs
+                        .anyRequest().authenticated())
                 .httpBasic(httpBasics -> httpBasics.disable())
                 .formLogin(formLogin -> formLogin.disable());
 
